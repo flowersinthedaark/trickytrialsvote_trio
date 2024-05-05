@@ -1,0 +1,14 @@
+{
+	"powers": [
+		"crabby:scuttle",
+		"crabby:scuttletwo",
+		"crabby:climby",
+		"crabby:reach",
+		"crabby:rave"
+	],
+	"icon": "minecraft:tube_coral",
+	"order": 2,
+	"impact": 2,
+	"name": "Crabble",
+	"description": "The scuttle of a Crabble is quite easily noticed, as their oddly-built limbs cause them to move erratically"
+}

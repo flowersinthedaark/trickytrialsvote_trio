@@ -1,0 +1,21 @@
+{
+	"type": "origins:modify_swim_speed",
+	"modifier": {
+		"operation": "multiply_total",
+		"value": 1.0
+	},
+	"badges": [
+		{
+			"type": "origins:tooltip",
+			"sprite": "origins:textures/gui/community/silent/badge/math/expression_multiply.png",
+			"text": "x2 swim speed"
+		},
+		{
+			"type": "origins:tooltip",
+			"sprite": "origins:textures/gui/community/silent/badge/shapes/arrow_down.png",
+			"text": "-0.5 height"
+		}
+	],
+	"name": "Penguin Build",
+	"description": "Your flippers and small size allow you to swim notably faster than a human."
+}

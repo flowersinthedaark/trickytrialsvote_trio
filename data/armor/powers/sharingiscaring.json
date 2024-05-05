@@ -1,0 +1,111 @@
+{
+	"type": "origins:action_on_entity_use",
+	"bientity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:heal",
+							"amount": 4
+						},
+						{
+							"type": "origins:execute_command",
+							"command": "particle heart ~ ~1 ~ 0.3 0.3 0.3 0.009 4 normal @a"
+						}
+					]
+				}
+			},
+			{
+				"type": "origins:if_else",
+				"if_action": {
+					"type": "origins:actor_action",
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "mainhand",
+						"action": {
+							"type": "origins:consume",
+							"amount": 1
+						}
+					}
+				},
+				"condition": {
+					"type": "origins:actor_condition",
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "minecraft:spider_eye"
+							}
+						}
+					}
+				},
+				"else_action": {
+					"type": "origins:actor_action",
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "offhand",
+						"action": {
+							"type": "origins:consume",
+							"amount": 1
+						}
+					}
+				}
+			}
+		]
+	},
+	"bientity_condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:target_condition",
+				"condition": {
+					"type": "origins:entity_type",
+					"entity_type": "minecraft:wolf"
+				}
+			},
+			{
+				"type": "origins:target_condition",
+				"condition": {
+					"type": "origins:relative_health",
+					"comparison": "!=",
+					"compare_to": 1.0
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:spider_eye"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:spider_eye"
+								}
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"hidden": true
+}

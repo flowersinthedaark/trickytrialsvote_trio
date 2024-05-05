@@ -1,0 +1,343 @@
+{
+	"type": "origins:multiple",
+	"sneaky_speed": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 10,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.07,
+			"name": "shift speed"
+		},
+		"condition": {
+			"type": "origins:sneaking"
+		}
+	},
+	"sneak_steps_right": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+			{
+				"type": "origins:if_else_list",
+				"actions": [
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.grass.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:dirt"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.stone.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:and",
+							"conditions": [
+							{
+								"type": "origins:in_tag",
+								"tag": "minecraft:mineable/pickaxe"
+							},
+							{
+								"type": "origins:in_tag",
+								"tag": "minecraft:crystal_sound_blocks",
+								"inverted": true
+							}
+							]
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.sculk.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:or",
+							"conditions": [
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_sensor"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_catalyst"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_shrieker"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_vein"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:calibrated_sculk_sensor"
+							}
+							]
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.amethyst_block.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:crystal_sound_blocks"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.wood.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:mineable/axe"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.wool.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:occludes_vibration_signals"
+						}
+					}
+				}
+				]
+			},
+			{
+				"type": "origins:emit_game_event",
+				"event": "minecraft:flap"
+			}
+			]
+		},
+		"cooldown": 20,
+		"key": {
+			"key": "key.right",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:sneaking"
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "legs",
+				"item_condition": {
+					"type": "origins:enchantment",
+					"enchantment": "minecraft:swift_sneak",
+					"comparison": "<=",
+					"compare_to": 2
+				}
+			}
+			]
+		}
+	},
+	"sneak_steps_left": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+			{
+				"type": "origins:if_else_list",
+				"actions": [
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.grass.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:dirt"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.stone.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:and",
+							"conditions": [
+							{
+								"type": "origins:in_tag",
+								"tag": "minecraft:mineable/pickaxe"
+							},
+							{
+								"type": "origins:in_tag",
+								"tag": "minecraft:crystal_sound_blocks",
+								"inverted": true
+							}
+							]
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.sculk.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:or",
+							"conditions": [
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_sensor"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_catalyst"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_shrieker"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:sculk_vein"
+							},
+							{
+								"type": "origins:block",
+								"block": "minecraft:calibrated_sculk_sensor"
+							}
+							]
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.amethyst_block.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:crystal_sound_blocks"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.wood.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:mineable/axe"
+						}
+					}
+				},
+				{
+					"action": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:block.wool.step",
+						"volume": 0.2
+					},
+					"condition": {
+						"type": "origins:on_block",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:occludes_vibration_signals"
+						}
+					}
+				}
+				]
+			},
+			{
+				"type": "origins:emit_game_event",
+				"event": "minecraft:flap"
+			}
+			]
+		},
+		"cooldown": 20,
+		"key": {
+			"key": "key.left",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:sneaking"
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "legs",
+				"item_condition": {
+					"type": "origins:enchantment",
+					"enchantment": "minecraft:swift_sneak",
+					"comparison": "<=",
+					"compare_to": 2
+				}
+			}
+			]
+		}
+	},
+	"badges": [
+		{
+			"type": "origins:tooltip",
+			"sprite": "origins:textures/gui/badge/star.png",
+			"text": "You can walk quieter with Swift Sneak III"
+		}
+	],
+	"name": "Cartoonishly Noisy",
+	"description": "Your sideways movement is too quick, and will still set off sculk sensors when crouched."
+}

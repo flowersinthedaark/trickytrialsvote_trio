@@ -1,0 +1,69 @@
+{
+	"type": "origins:multiple",
+	"justfish": {
+		"type": "origins:modify_food",
+		"food_modifier": {
+			"name": "worse hunger",
+			"operation": "multiply_base",
+			"value": -0.8
+		},
+		"saturation_modifier": {
+			"name": "worse sat",
+			"operation": "multiply_base",
+			"value": -0.8
+		},
+		"item_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "slip:fishyfoods"
+					},
+					"inverted": true
+				}
+			]
+		}
+	},
+	"bestfish": {
+		"type": "origins:modify_food",
+		"food_modifier": {
+			"name": "better hunger",
+			"operation": "multiply_base",
+			"value": 0.2
+		},
+		"saturation_modifier": {
+			"name": "better sat",
+			"operation": "multiply_base",
+			"value": 0.1
+		},
+		"item_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "slip:fishyfoods"
+					}
+				}
+			]
+		}
+	},
+	"fishtip": {
+		"type": "origins:tooltip",
+		"text": "§bYummier §f(Piscivore)",
+		"item_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "slip:fishyfoods"
+					}
+				}
+			]
+		}
+	},
+	"name": "Piscivore",
+	"description": "You are used to hunting fish, so it is slightly more filling and saturating, but all other food is barely useful to you."
+}

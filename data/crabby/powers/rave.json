@@ -1,0 +1,67 @@
+{
+	"type": "origins:multiple",
+	"raveparts": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:chance",
+			"action": {
+				"type": "origins:spawn_particles",
+				"particle": "minecraft:note",
+				"count": 3,
+				"speed": 1
+			},
+			"chance": 0.33
+		},
+		"key": {
+			"key": "key.sneak"
+		},
+		"condition": {
+			"type": "origins:block_in_radius",
+			"radius": 12,
+			"shape": "cube",
+			"comparison": ">=",
+			"compare_to": 1,
+			"block_condition": {
+				"type": "origins:block_state",
+				"property": "has_record",
+				"value": true
+			}
+		}
+	},
+	"theurge": {
+		"type": "origins:action_on_block_use",
+		"entity_action": {
+			"type": "origins:chance",
+			"action": {
+				"type": "origins:execute_command",
+				"command": "tellraw @s \"§dY§co§eu §6f§1e§9e§3l §bt§ah§2e §du§cr§eg§6e §1t§9o §3r§ba§av§2e§d.§c.§e.\""
+			},
+			"chance": 0.5
+		},
+		"block_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:block",
+					"block": "minecraft:jukebox"
+				},
+				{
+					"type": "origins:block_state",
+					"property": "has_record",
+					"value": false
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "mainhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"tag": "minecraft:music_discs"
+				}
+			}
+		}
+	},
+	"hidden": true
+}

@@ -1,0 +1,15 @@
+{
+	"type": "origins:modify_healing",
+	"modifier": {
+		"operation": "multiply_base",
+		"value": 0.25
+	},
+	"condition": {
+		"type": "origins:command",
+		"command": "execute if entity @e[type = minecraft:player, distance = 0..1]",
+		"comparison": ">=",
+		"compare_to": 1
+	},
+	"name": "Huddle Up",
+	"description": "A smaller body means less to keep warm, but your kind will still huddle together for heat and will heal more effectively when very close to others"
+}

@@ -1,0 +1,55 @@
+{
+	"type": "origins:multiple",
+	"shellarmor": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"name": "curled up",
+			"attribute": "minecraft:generic.armor",
+			"operation": "addition",
+			"value": 6.0
+		},
+		"tick_rate": 1,
+		"condition": {
+			"type": "origins:sneaking"
+		},
+		"name": "curl up",
+		"description": "armor when sneak"
+	},
+	"shelldrop": {
+		"type": "origins:modify_falling",
+		"velocity": 0.2,
+		"condition": {
+			"type":"origins:sneaking"
+		}
+	},
+	"quickbounce": {
+		"type": "origins:action_on_land",
+		"entity_action": {
+			"type": "origins:add_velocity",
+			"space": "world",
+			"y": 0.7
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fall_distance",
+					"comparison": ">=",
+					"compare_to": 4
+				},
+				{
+					"type": "origins:sneaking"
+				}
+			]
+		}
+	},
+	"badges": [
+		{
+			"type": "origins:tooltip",
+			"sprite": "origins:textures/gui/community/silent/badge/icons/armor.png",
+			"text": "+6 armor"
+		}
+	],
+	"name": "Shell Armor",
+	"description": "You can curl up by crouching, giving you extra armor points and causing you to fall faster."
+}

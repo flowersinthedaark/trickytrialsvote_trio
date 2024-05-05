@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"slip:slippery",
+		"slip:waterwalk",
+		"slip:flippers",
+		"slip:smallvibes",
+		"slip:fishyfood",
+		"slip:huddleup",
+		"origins:aquatic"
+	],
+	"icon": "minecraft:tropical_fish",
+	"order": 3,
+	"impact": 2,
+	"name": "Pengui",
+	"description": "The slippery little Pengui are not the most coordinated on land, but the most skilled can move with a clumsy sort of grace, especially on water"
+}

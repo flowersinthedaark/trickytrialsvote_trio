@@ -1,0 +1,28 @@
+{
+	"type": "origins:multiple",
+	"groudslip": {
+		"type": "origins:modify_slipperiness",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.7
+		},
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "minecraft:ice",
+			"inverted": true
+		}
+	},
+	"iceslip": {
+		"type": "origins:modify_slipperiness",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.07
+		},
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "minecraft:ice"
+		}
+	},
+	"name": "Slip",
+	"description": "All surfaces are slippery beneath your webbed feet."
+}

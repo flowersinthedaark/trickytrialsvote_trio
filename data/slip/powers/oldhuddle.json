@@ -1,0 +1,212 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:if_else_list",
+		"actions": [
+			{
+				"action": {
+					"type": "origins:area_of_effect",
+					"radius": 2.0,
+					"shape": "cube",
+					"bientity_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 0,
+										"show_particles": true,
+										"duration": 60
+									}
+								}
+							},
+							{
+								"type": "origins:actor_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 0,
+										"show_particles": true,
+										"duration": 60
+									}
+								}
+							}
+						]
+					},
+					"bientity_condition": {
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:player"
+						}
+					}
+				},
+				"condition": {
+					"type": "apugli:entity_in_radius",
+					"radius": 2,
+					"comparison": ">=",
+					"compare_to": 2,
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:entity_type",
+								"entity_type": "minecraft:player"
+							},
+							{
+								"type": "origins:origin",
+								"origin": "slip:slide",
+								"layer": "origins:origin",
+								"inverted": true
+							}
+						]
+					}
+				}
+			},
+			{
+				"action": {
+					"type": "origins:area_of_effect",
+					"radius": 2.0,
+					"shape": "cube",
+					"bientity_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 1,
+										"show_particles": false,
+										"duration": 60
+									}
+								}
+							},
+							{
+								"type": "origins:actor_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 1,
+										"show_particles": false,
+										"duration": 60
+									}
+								}
+							}
+						]
+					},
+					"bientity_condition": {
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:player"
+						}
+					}
+				},
+				"condition": {
+					"type":"origins:and",
+					"conditions": [
+						{
+							"type": "apugli:entity_in_radius",
+							"radius": 2,
+							"comparison": ">=",
+							"compare_to": 2,
+							"condition": {
+								"type": "origins:entity_type",
+								"entity_type": "minecraft:player"
+							}
+						},
+						{
+							"type": "apugli:entity_in_radius",
+							"radius": 2,
+							"comparison": "==",
+							"compare_to": 1,
+							"condition": {
+								"type": "origins:origin",
+								"origin": "slip:slide",
+								"layer": "origins:origin"
+							}
+						}
+					]
+				}
+			},
+			{
+				"action": {
+					"type": "origins:area_of_effect",
+					"radius": 2.0,
+					"shape": "cube",
+					"bientity_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 2,
+										"show_particles": false,
+										"duration": 60
+									}
+								}
+							},
+							{
+								"type": "origins:actor_action",
+								"action": {
+									"type": "origins:apply_effect",
+									"effect": {
+										"effect": "minecraft:regeneration",
+										"amplifier": 2,
+										"show_particles": false,
+										"duration": 60
+									}
+								}
+							}
+						]
+					},
+					"bientity_condition": {
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:player"
+						}
+					}
+				},
+				"condition": {
+					"type":"origins:and",
+					"conditions": [
+						{
+							"type": "apugli:entity_in_radius",
+							"radius": 2,
+							"comparison": ">=",
+							"compare_to": 2,
+							"condition": {
+								"type": "origins:entity_type",
+								"entity_type": "minecraft:player"
+							}
+						},
+						{
+							"type": "apugli:entity_in_radius",
+							"radius": 2,
+							"comparison": ">=",
+							"compare_to": 2,
+							"condition": {
+								"type": "origins:origin",
+								"origin": "slip:slide",
+								"layer": "origins:origin"
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"name": "Huddle Up",
+	"description": "A smaller body means less to keep warm, but your kind will still huddle together for heat, providing regeneration when there are two or more players in a very close radius."
+}

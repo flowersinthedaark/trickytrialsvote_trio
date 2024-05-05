@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"armor:arma",
+		"armor:armorsoundfx",
+		"armor:armordash",
+		"armor:shellgap",
+		"armor:spidermunch",
+		"armor:sharingiscaring",
+		"armor:hunch"
+	],
+	"icon": "minecraft:leather",
+	"order": 4,
+	"impact": 1,
+	"name": "Arma",
+	"description": "It's not uncommon to spot an Arma rolling toward an enemy at high speeds; using their heavily armored shells as weapons is their specialty"
+}

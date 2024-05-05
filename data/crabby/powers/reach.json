@@ -1,0 +1,11 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "claw reach",
+        "attribute": "reach-entity-attributes:reach",
+        "value": 2.0,
+        "operation": "addition"
+    },
+    "name": "Crabby Claws",
+    "description": "Your claws allow you to reach blocks slightly farther away. They are unfortunately useless when reaching further entities."
+}

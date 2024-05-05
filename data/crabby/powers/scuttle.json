@@ -1,0 +1,133 @@
+{
+    "type": "origins:multiple",
+
+
+    "scuttle": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+
+    "decay": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_scuttle",
+            "change": -1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_scuttle",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+
+    "left_key": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_scuttle",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_scuttle",
+                    "change": 2
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.left",
+            "continuous": true
+        }
+    },
+	"side_speed": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 5,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.35,
+			"name": "Increased sprinting speed"
+		},
+		"condition": {
+			"type": "origins:resource",
+            "resource": "*:*_scuttle",
+            "comparison": ">",
+            "compare_to": 1
+		}
+	},
+	"right_key": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_scuttle",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_scuttle",
+                    "change": 2
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.right",
+            "continuous": true
+        }
+    },
+	"forward_speed": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 5,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": -0.17,
+			"name": "decreased speed"
+		},
+		"condition": {
+			"type": "origins:resource",
+            "resource": "*:*_scuttle",
+            "comparison": "==",
+            "compare_to": 0
+		}
+	},
+	"badges": [],
+	"name": "Scuttle",
+	"description": "Your legs are not built for normal movement. You move faster side to side and when crouched, but slower straight forward or backward."
+}
